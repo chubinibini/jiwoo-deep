@@ -1,6 +1,8 @@
-# 당신의 나쁜 기억을 지워드립니다 '음성 챗봇 지우'
+# Sk Shieldus Rookies 딥러닝 미니 프로젝트
 
-## Module Version
+## 당신의 나쁜 기억을 지워드립니다 '음성 챗봇 지우'
+
+### Module Version
 
 - Python 3.9.13
 - Tensorflow 2.11.0
@@ -17,12 +19,12 @@
 - Librosa 0.10.0
 - Flask 1.1.2
 
-## Wav2Vec2 (STT Model)
+### Wav2Vec2 (STT Model)
 
 
 
-## GPT (Language Generate Model)
+### GPT (Language Generate Model)
 
-## Bert (Emotion Analyze Model)
+### Bert (Emotion Analyze Model)
 
-## TacoTron (TTS Model)
+### TacoTron (TTS Model)
