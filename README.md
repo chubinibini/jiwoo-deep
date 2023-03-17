@@ -97,16 +97,25 @@ Module Version
 <br/>
 - Tacotron 선정이유
   - TTS 모델중 WaveNet과 Deepvoice라는 모델이 있었는데 WaveNet은 TTS로 바로 사용할 수 없다는 문제점, DeepVoice는 End-to-End 모델이 아니라는 문제점이 있어 두 모델의 절충안인 Tacotron을 선택하게 되었다.
-- Tacotron의 장점
-  - 텍스트를 입력받으면 바로 Raw Spectogram을 만들어서 별다른 추가 없이 TTS를 만들 수 있다
-  - <Text,Audio> 페어를 사용해 End-to-End학습이 
 
  <p align="center">
   <img src="https://user-images.githubusercontent.com/123059090/225828787-417e0f7c-19b9-4096-97d9-2596dc8267a3.png">
 </p>
+
+- Tacotron의 장점
+  - 텍스트를 입력받으면 바로 Raw Spectogram을 만들어서 별다른 추가 없이 TTS를 만들 수 있다
+  - <Text,Audio> 페어를 사용해 End-to-End학습이 가능하다
+ 
 <br/>
 
 ### 데이터
+- TacoTron을 학습할 때 사용한 데이터는 [Korean Single Speaker Speech Dataset(KSS)](https://www.kaggle.com/datasets/bryanpark/korean-single-speaker-speech-dataset)로 전문 성우가 녹음한 음성데이터 12,853개와 음성데이터와 맞는 텍스트에 관련한 경로,원본 스크립트,확장 스크립트,분해된 스크립트,오디오 길이(초),영문 번역이 적혀져 있는 스크립트로 이루어져있다.
+
+### 학습과정 및 결과
+- GPU를 사용하여 Tacotron에 KSS데이터를 학습시켜보았다.
+- 24000번째 학습에서 멈추고 쌓인 가중치로 텍스트를 읽어 wav파일을 생성시키게 해보았더니 음질이 좋지않고, 같은 문장을 여러번 반복하였다.
+- 그래서 계속 학습시켜 보았지만 110000회 이상에서 오류가 발생 하였고,그 이전 가중치인 102000회번빼 가중치를 사용해도 음성의 질이 나쁘고 반복된 문장이 나왔다
+- 바뀐점이 없어 24000번째 학습의 가중치로 TTS구현을 완료했다.
 
 
 ### 최종 Output
