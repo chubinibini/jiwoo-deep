@@ -85,13 +85,19 @@ Module Version
 - 결과론적으로 우리는 제대로된 모델학습을 진행하지 못하였다.
 - 최종 결과물은 Huggingface에서 Wev2Vec2로 우리와 같은 데이터를 이용한 [Wav2Vec2 모델](https://huggingface.co/cheulyop/wav2vec2-large-xlsr-ksponspeech_1-20)로 결과값을 내었다.
     
-  
 
+---
 
 
 ### GPT (Language Generate Model)
 
+
+---
+
 ### Bert (Emotion Analyze Model)
+
+
+---
 
 ### TacoTron (TTS Model)
 <br/>
