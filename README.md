@@ -111,7 +111,17 @@ Module Version
 - Tacotron의 장점
   - 텍스트를 입력받으면 바로 Raw Spectogram을 만들어서 별다른 추가 없이 TTS를 만들 수 있다
   - <Text,Audio> 페어를 사용해 End-to-End학습이 가능하다
- 
+
+
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/123059090/225838662-aa76fb45-f125-42d4-b69e-389e6e9f1613.png">
+</p>
+
+- Tacotron의 구조
+  - Tacotron 모델은 Attention Mechanism을 적용한 Encoder-Decoder 구조이다
+  - Tacotron은 Encoder-Decoder 구조에서 CBHG모델을 사용한다.
+  - CBHG는 Convlution bank,Highway Network,GRU의 약어로 이를 거쳐서 생성된 시퀸스를 Attention에 사용한다
+
 <br/>
 
 ### 데이터
