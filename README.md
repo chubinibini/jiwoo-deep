@@ -1,8 +1,8 @@
 # Sk Shieldus Rookies 딥러닝 미니 프로젝트 (3조)
 
 ## 당신의 나쁜 기억을 지워드립니다 '음성 챗봇 지우'
-
-### Module Version
+'''
+Module Version
 
 - Python 3.9.13
 - Tensorflow 2.11.0
@@ -18,7 +18,7 @@
 - Glob2 0.7
 - Librosa 0.10.0
 - Flask 1.1.2
-
+'''
 ---
 
 ### 모델의 전체적인 순서도
