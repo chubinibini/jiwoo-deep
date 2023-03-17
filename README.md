@@ -94,6 +94,20 @@ Module Version
 ### Bert (Emotion Analyze Model)
 
 ### TacoTron (TTS Model)
+<br/>
+- Tacotron 선정이유
+  - TTS 모델중 WaveNet과 Deepvoice라는 모델이 있었는데 WaveNet은 TTS로 바로 사용할 수 없다는 문제점, DeepVoice는 End-to-End 모델이 아니라는 문제점이 있어 두 모델의 절충안인 Tacotron을 선택하게 되었다.
+- Tacotron의 장점
+  - 텍스트를 입력받으면 바로 Raw Spectogram을 만들어서 별다른 추가 없이 TTS를 만들 수 있다
+  - <Text,Audio> 페어를 사용해 End-to-End학습이 
+
+ <p align="center">
+  <img src="https://user-images.githubusercontent.com/123059090/225828787-417e0f7c-19b9-4096-97d9-2596dc8267a3.png">
+</p>
+<br/>
+
+### 데이터
+
 
 ### 최종 Output
 
