@@ -1,4 +1,4 @@
-# Sk Shieldus Rookies 딥러닝 미니 프로젝트
+# Sk Shieldus Rookies 딥러닝 미니 프로젝트 (3조)
 
 ## 당신의 나쁜 기억을 지워드립니다 '음성 챗봇 지우'
 
