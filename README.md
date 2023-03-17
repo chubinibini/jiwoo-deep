@@ -95,7 +95,21 @@ Module Version
 ---
 
 ### Bert (Emotion Analyze Model)
+- Bert 사용 이유
+  - keras 토크나이저와 LSTM, CNN 모델을 사용했을때 test set 정확도가 각각 0.50, 0.56로 도출되었다. 
+bert 토크나이저와 TFBertForSequenceClassification 모델을 사용하여 fine-tuning을 진행하자 test set 정확도가 0.68로 향상되었다.
+bert의 사전학습 모델은 KLUE-BERT로 모두의 말뭉치, CC-100-Kor, 나무위키, 뉴스, 청원 등 문서에서 추출한 63GB의 데이터로 학습되었다.
 
+- 데이터 
+csv 파일인 한국어 감정 정보가 포함된 단발성 대화 데이터 셋 55628개, 한국어 감정 정보가 포함된 연속적 대화 데이터 셋 38594개를 결합하여 총 94222개 데이터로 학습을 진행하였다.
+문장과 문장에 해당되는 감정으로 이루어져 있으며 7가지의 감정을 0-6 숫자로 라벨링하였다.
+
+- 학습 과정 및 결과론적 모델
+94222개 데이터를 train, test 8:2로 분리하여 학습을 진행하였다.(8 epoch)
+옵티마이저 알고리즘은 RAdam을 사용하여 학습 초기에 일어날 수 있는 bad local optima problem을 해결하고, 학습 안정성을 높였다. 
+다중분류이고 라벨값이 정수이기때문에 손실함수로 SparseCategoricalCrossentropy를 사용하였다.
+train set의 정확도는 0.8941, test set의 정확도는 0.6828가 도출되었다. 
+이는 train set에서 학습되지 않은 단어들이 test set에 등장하여 이런 격차가 나타난것으로 보인다. 이를 서브워드 토크나이저 : WordPiece Tokenizing를 사용하여 개선할 수 있을 것이다.
 
 ---
 
@@ -111,17 +125,7 @@ Module Version
 - Tacotron의 장점
   - 텍스트를 입력받으면 바로 Raw Spectogram을 만들어서 별다른 추가 없이 TTS를 만들 수 있다
   - <Text,Audio> 페어를 사용해 End-to-End학습이 가능하다
-
-
- <p align="center">
-  <img src="https://user-images.githubusercontent.com/123059090/225838662-aa76fb45-f125-42d4-b69e-389e6e9f1613.png">
-</p>
-
-- Tacotron의 구조
-  - Tacotron 모델은 Attention Mechanism을 적용한 Encoder-Decoder 구조이다
-  - Tacotron은 Encoder-Decoder 구조에서 CBHG모델을 사용한다.
-  - CBHG는 Convlution bank,Highway Network,GRU의 약어로 이를 거쳐서 생성된 시퀸스를 Attention에 사용한다
-
+ 
 <br/>
 
 ### 데이터
